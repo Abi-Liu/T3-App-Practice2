@@ -19,7 +19,7 @@ export const todoRouter = createTRPCRouter({
   }),
 
   create: protectedProcedure
-    .input(z.object({ todo: z.string() }))
+    .input(z.object({ todo: z.string().nonempty() }))
     .mutation(async ({ input, ctx }) => {
       return await ctx.prisma.todo.create({
         data: { userId: ctx.session.user.id, todo: input.todo },

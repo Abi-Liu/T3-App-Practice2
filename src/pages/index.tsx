@@ -1,13 +1,13 @@
-import { signIn, signOut, useSession } from "next-auth/react";
-import Link from "next/link";
-import { FormEvent, useState } from "react";
+import { useSession } from "next-auth/react";
 import { api } from "~/utils/api";
 import Form from "./component/Form";
 import TodoList from "./component/TodoList";
+import Welcome from "./component/Welcome";
 
 export default function Home() {
   return (
-    <div className="px-[45%] pt-[100px] ">
+    <div className="container mx-auto">
+      <Welcome />
       <Form />
       <TodoList />
     </div>

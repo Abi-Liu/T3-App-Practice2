@@ -13,18 +13,18 @@ const Header = () => {
         </div>
         <div className="flex-none gap-2">
           {sessionData ? (
-            <div className="dropdown-end dropdown">
+            <div className="dropdown dropdown-end">
               <label tabIndex={0} className="avatar btn btn-circle btn-ghost">
                 <div className="w-10 rounded-full">
                   <img
-                    src={sessionData?.user?.image ?? undefined}
+                    src={sessionData?.user?.image ?? ""}
                     alt="profile image"
                   />
                 </div>
               </label>
               <ul
                 tabIndex={0}
-                className="menu dropdown-content rounded-box menu-sm bg-base-100 z-[1] mt-3 w-52 p-2 shadow"
+                className="menu dropdown-content rounded-box menu-sm z-[1] mt-3 w-52 bg-base-100 p-2 shadow"
               >
                 <li>
                   <a onClick={() => void signOut()}>Logout</a>
